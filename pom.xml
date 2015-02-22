@@ -54,7 +54,7 @@
     ==========================================================================================
 
         Rooted in Open Source CMS, Jahia’s Digital Industrialization paradigm is about
-        streamlining Enterprise digital projects across channels to truly control
+        streamlining Enterprise digital projects across  to truly control
         time-to-market and TCO, project after project.
         Putting an end to “the Tunnel effect”, the Jahia Studio enables IT and
         marketing teams to collaboratively and iteratively build cutting-edge
@@ -81,14 +81,15 @@
         <version>7.1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>channels</artifactId>
+    <version>7.1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
-    <name>Jahia Channels</name>
+    <name>Jahia </name>
     <description>Jahia template module that detects and display different content depending on the channel.
     </description>
     <scm>
-        <connection>scm:svn:https://devtools.jahia.com/svn/jahia/trunk/modules/channels</connection>
-        <developerConnection>scm:svn:https://devtools.jahia.com/svn/jahia/trunk/modules/channels</developerConnection>
-        <url>https://devtools.jahia.com/svn/jahia/trunk/modules/channels</url>
+        <connection>scm:git:git@github.com:Jahia/assets.git</connection>
+        <developerConnection>scm:git:git@github.com:Jahia/assets.git</developerConnection>
+        <url>scm:git:git@github.com:Jahia/assets.git</url>
     </scm>
 
     <properties>
