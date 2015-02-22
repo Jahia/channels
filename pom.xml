@@ -87,9 +87,9 @@
     <description>Jahia template module that detects and display different content depending on the channel.
     </description>
     <scm>
-        <connection>scm:git:git@github.com:Jahia/assets.git</connection>
-        <developerConnection>scm:git:git@github.com:Jahia/assets.git</developerConnection>
-        <url>scm:git:git@github.com:Jahia/assets.git</url>
+        <connection>scm:git:git@github.com:Jahia/channels.git</connection>
+        <developerConnection>scm:git:git@github.com:Jahia/channels.git</developerConnection>
+        <url>scm:git:git@github.com:Jahia/channels.git</url>
     </scm>
 
     <properties>
