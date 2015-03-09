@@ -83,7 +83,7 @@
     <artifactId>channels</artifactId>
     <version>7.1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
-    <name>Jahia </name>
+    <name>Jahia Channels</name>
     <description>Jahia template module that detects and display different content depending on the channel.
     </description>
     <scm>
