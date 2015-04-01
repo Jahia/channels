@@ -89,7 +89,7 @@
     <scm>
         <connection>scm:git:git@github.com:Jahia/channels.git</connection>
         <developerConnection>scm:git:git@github.com:Jahia/channels.git</developerConnection>
-        <url>scm:git:git@github.com:Jahia/channels.git</url>
+        <url>https://github.com/Jahia/channels</url>
     </scm>
 
     <properties>
