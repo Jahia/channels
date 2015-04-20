@@ -78,6 +78,7 @@
     <groupId>org.jahia.modules</groupId>
     <artifactId>jahia-modules</artifactId>
     <version>7.0.0.4</version>
+    <relativePath/>
   </parent>
   <artifactId>channels</artifactId>
   <version>7.0.1-SNAPSHOT</version>
