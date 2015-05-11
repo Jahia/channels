@@ -247,7 +247,10 @@
                     <list>
                         <value>jnt:content</value>
                         <value>jnt:area</value>
-                        <value>jnt:page</value>
+                    </list>
+                </property>
+                <property name="hideForTypes">
+                    <list>
                         <value>jnt:nodeLink</value>
                         <value>jnt:externalLink</value>
                     </list>
