@@ -35,23 +35,45 @@
                         </map>
                     </property>
                 </bean>
+                <bean class="org.jahia.services.channels.Channel" id="android_tablet">
+                    <property name="identifier" value="android_tablet"/>
+                    <property name="fallBack" value="generic"/>
+                    <property name="capabilities">
+                        <map>
+                            <entry key="display-name" value="Tablet: Android"/>
+                            <entry key="template-type-mapping" value="tablet"/>
+                            <entry key="variants" value="portrait,landscape"/>
+                            <entry key="variants-displayNames" value="Portrait,Landscape"/>
+                            <entry key="usable-resolutions" value="768x1024,1024x768"/>
+                            <entry key="device-image" value="/modules/channels/images/devices/ipad-small.png"/>
+                            <entry key="decorator-images"
+                                   value="/modules/channels/images/devices/template_768x1024_portrait.png,/modules/channels/images/devices/template_768x1024_landscape.png"/>
+                            <entry key="decorator-image-sizes" value="920x1138,1138x920"/>
+                            <entry key="decorator-screen-positions" value="78x57,57x78"/>
+                            <entry key="resolution_width" value="768"/>
+                            <entry key="resolution_height" value="1024"/>
+                            <entry key="userAgentPattern" value=".*Android(?!.*Mobile).*"/>
+                            <entry key="full_flash_support" value="false"/>
+                        </map>
+                    </property>
+                </bean>
                 <bean class="org.jahia.services.channels.Channel" id="apple_iphone_ver1">
                     <property name="identifier" value="apple_iphone_ver1"/>
                     <property name="fallBack" value="generic_mobile"/>
                     <property name="capabilities">
                         <map>
-                            <entry key="display-name" value="iPhone"/>
+                            <entry key="display-name" value="Phone: iPhone"/>
                             <entry key="template-type-mapping" value="iphone"/>
                             <entry key="variants" value="portrait,landscape"/>
                             <entry key="variants-displayNames" value="Portrait,Landscape"/>
-                            <entry key="usable-resolutions" value="320x356,480x208"/>
+                            <entry key="usable-resolutions" value="375x667,667x375"/>
                             <entry key="device-image" value="/modules/channels/images/devices/iphone-small.png"/>
                             <entry key="decorator-images"
-                                   value="/modules/channels/images/devices/iphone-portrait.png,/modules/channels/images/devices/iphone-landscape.png"/>
-                            <entry key="decorator-image-sizes" value="388x738,734x383"/>
-                            <entry key="decorator-screen-positions" value="35x216,124x115"/>
-                            <entry key="resolution_width" value="320"/>
-                            <entry key="resolution_height" value="480"/>
+                                   value="/modules/channels/images/devices/template_375x667_portrait.png,/modules/channels/images/devices/template_375x667_landscape.png"/>
+                            <entry key="decorator-image-sizes" value="426x856,856x426"/>
+                            <entry key="decorator-screen-positions" value="28x97,97x23"/>
+                            <entry key="resolution_width" value="750"/>
+                            <entry key="resolution_height" value="1334"/>
                             <entry key="userAgentPattern" value=".*iPhone.*"/>
                             <entry key="full_flash_support" value="false"/>
                         </map>
@@ -63,15 +85,15 @@
                     <property name="capabilities">
                         <map>
                             <entry key="template-type-mapping" value="ipad"/>
-                            <entry key="display-name" value="iPad"/>
+                            <entry key="display-name" value="Tablet: iPad"/>
                             <entry key="variants" value="portrait,landscape"/>
                             <entry key="variants-displayNames" value="Portrait,Landscape"/>
-                            <entry key="usable-resolutions" value="768x947,1024x691"/>
+                            <entry key="usable-resolutions" value="768x1024,1024x768"/>
                             <entry key="device-image" value="/modules/channels/images/devices/ipad-small.png"/>
                             <entry key="decorator-images"
-                                   value="/modules/channels/images/devices/ipad-portrait.png,/modules/channels/images/devices/ipad-landscape.png"/>
-                            <entry key="decorator-image-sizes" value="1007x1296,1276x1004"/>
-                            <entry key="decorator-screen-positions" value="122x221,127x194"/>
+                                   value="/modules/channels/images/devices/template_ipad_768x1024_portrait.png,/modules/channels/images/devices/template_ipad_768x1024_landscape.png"/>
+                            <entry key="decorator-image-sizes" value="787x1138,1138x878"/>
+                            <entry key="decorator-screen-positions" value="55x37,37x55"/>
                             <entry key="resolution_width" value="768"/>
                             <entry key="resolution_height" value="1024"/>
                             <entry key="userAgentPattern" value=".*iPad.*"/>
@@ -85,18 +107,18 @@
                     <property name="capabilities">
                         <map>
                             <entry key="template-type-mapping" value="android"/>
-                            <entry key="display-name" value="Android"/>
+                            <entry key="display-name" value="Phone: Android"/>
                             <entry key="variants" value="portrait,landscape"/>
                             <entry key="variants-displayNames" value="Portrait,Landscape"/>
                             <entry key="device-image" value="/modules/channels/images/devices/android-small.png"/>
-                            <entry key="usable-resolutions" value="412x651,683x383"/>
+                            <entry key="usable-resolutions" value="360x640,640x360"/>
                             <entry key="decorator-images"
-                                   value="/modules/channels/images/devices/android-portrait.png,/modules/channels/images/devices/android-landscape.png"/>
-                            <entry key="decorator-image-sizes" value="508x986,986x508"/>
-                            <entry key="decorator-screen-positions" value="50x181,148x75"/>
-                            <entry key="resolution_width" value="320"/>
-                            <entry key="resolution_height" value="480"/>
-                            <entry key="userAgentPattern" value=".*Android.*"/>
+                                   value="/modules/channels/images/devices/template_360x640_portrait.png,/modules/channels/images/devices/template_360x640_landscape.png"/>
+                            <entry key="decorator-image-sizes" value="386x755,755x386"/>
+                            <entry key="decorator-screen-positions" value="14x57,57x12"/>
+                            <entry key="resolution_width" value="1080"/>
+                            <entry key="resolution_height" value="1920"/>
+                            <entry key="userAgentPattern" value=".*Android.*Mobile.*"/>
                             <entry key="full_flash_support" value="false"/>
                         </map>
                     </property>
@@ -104,6 +126,7 @@
                 <bean class="org.jahia.services.channels.Channel" id="blackberry9530_ver1">
                     <property name="identifier"  value="blackberry9530_ver1"/>
                     <property name="fallBack" value="generic_mobile"/>
+                    <property name="visible" value="false"/>
                     <property name="capabilities">
                         <map>
                             <entry key="template-type-mapping" value="bbstorm"/>
@@ -126,6 +149,7 @@
                 <bean class="org.jahia.services.channels.Channel" id="amazon_kindle_fire_ver1">
                     <property name="identifier" value="amazon_kindle_fire_ver1"/>
                     <property name="fallBack" value="generic_mobile"/>
+                    <property name="visible" value="false"/>
                     <property name="capabilities">
                         <map>
                             <entry key="template-type-mapping" value="kindlefire"/>
@@ -148,6 +172,7 @@
                 <bean class="org.jahia.services.channels.Channel" id="samsung_gt_i9500_ver1">
                     <property name="identifier" value="samsung_gt_i9500_ver1"/>
                     <property name="fallBack" value="generic_mobile"/>
+                    <property name="visible" value="false"/>
                     <property name="capabilities">
                         <map>
                             <entry key="template-type-mapping" value="samsunggalaxys4"/>
@@ -170,6 +195,7 @@
                 <bean class="org.jahia.services.channels.Channel" id="samsung_sm_t210_ver1">
                     <property name="identifier" value="samsung_sm_t210_ver1"/>
                     <property name="fallBack" value="generic_mobile"/>
+                    <property name="visible" value="false"/>
                     <property name="capabilities">
                         <map>
                             <entry key="template-type-mapping" value="samsunggalaxytab7"/>
@@ -192,6 +218,7 @@
                 <bean class="org.jahia.services.channels.Channel" id="samsung_gt_p5200_ver1">
                     <property name="identifier" value="samsung_gt_p5200_ver1"/>
                     <property name="fallBack" value="generic_mobile"/>
+                    <property name="visible" value="false"/>
                     <property name="capabilities">
                         <map>
                             <entry key="template-type-mapping" value="samsunggalaxytab10.1"/>
@@ -214,6 +241,7 @@
                 <bean class="org.jahia.services.channels.Channel" id="samsung_sm_n900_ver1">
                     <property name="identifier" value="samsung_sm_n900_ver1"/>
                     <property name="fallBack" value="generic_mobile"/>
+                    <property name="visible" value="false"/>
                     <property name="capabilities">
                         <map>
                             <entry key="template-type-mapping" value="samsunggalaxynote3"/>
