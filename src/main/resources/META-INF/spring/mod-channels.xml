@@ -22,7 +22,7 @@
                     <property name="visible" value="false"/>
                     <property name="capabilities">
                         <map>
-                            <entry key="display-name" value="Generic Mobile"/>
+                            <entry key="display-name" value="Generic Phone"/>
                             <entry key="template-type-mapping" value="mobile"/>
                             <entry key="device-image" value="/modules/channels/images/devices/iphone-small.png"/>
                             <entry key="decorator-images"
