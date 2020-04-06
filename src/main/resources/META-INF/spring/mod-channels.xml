@@ -48,8 +48,8 @@
                             <entry key="device-image" value="/modules/channels/images/devices/ipad-small.png"/>
                             <entry key="decorator-images"
                                    value="/modules/channels/images/devices/template_768x1024_portrait.png,/modules/channels/images/devices/template_768x1024_landscape.png"/>
-                            <entry key="decorator-image-sizes" value="920x1138,1138x920"/>
-                            <entry key="decorator-screen-positions" value="78x57,57x78"/>
+                            <entry key="decorator-image-sizes" value="888x1174,1174x888"/>
+                            <entry key="decorator-screen-positions" value="60x60,60x60"/>
                             <entry key="resolution_width" value="768"/>
                             <entry key="resolution_height" value="1024"/>
                             <entry key="userAgentPattern" value=".*Android(?!.*Mobile).*"/>
@@ -70,8 +70,8 @@
                             <entry key="device-image" value="/modules/channels/images/devices/iphone-small.png"/>
                             <entry key="decorator-images"
                                    value="/modules/channels/images/devices/template_375x667_portrait.png,/modules/channels/images/devices/template_375x667_landscape.png"/>
-                            <entry key="decorator-image-sizes" value="426x856,856x426"/>
-                            <entry key="decorator-screen-positions" value="28x97,97x23"/>
+                            <entry key="decorator-image-sizes" value="495x797,797x495"/>
+                            <entry key="decorator-screen-positions" value="60x60,60x60"/>
                             <entry key="resolution_width" value="750"/>
                             <entry key="resolution_height" value="1334"/>
                             <entry key="userAgentPattern" value=".*iPhone.*"/>
@@ -92,8 +92,8 @@
                             <entry key="device-image" value="/modules/channels/images/devices/ipad-small.png"/>
                             <entry key="decorator-images"
                                    value="/modules/channels/images/devices/template_ipad_768x1024_portrait.png,/modules/channels/images/devices/template_ipad_768x1024_landscape.png"/>
-                            <entry key="decorator-image-sizes" value="787x1138,1138x878"/>
-                            <entry key="decorator-screen-positions" value="55x37,37x55"/>
+                            <entry key="decorator-image-sizes" value="888x1174,1174x888"/>
+                            <entry key="decorator-screen-positions" value="60x60,60x60"/>
                             <entry key="resolution_width" value="768"/>
                             <entry key="resolution_height" value="1024"/>
                             <entry key="userAgentPattern" value=".*iPad.*"/>
@@ -114,8 +114,8 @@
                             <entry key="usable-resolutions" value="360x640,640x360"/>
                             <entry key="decorator-images"
                                    value="/modules/channels/images/devices/template_360x640_portrait.png,/modules/channels/images/devices/template_360x640_landscape.png"/>
-                            <entry key="decorator-image-sizes" value="386x755,755x386"/>
-                            <entry key="decorator-screen-positions" value="14x57,57x12"/>
+                            <entry key="decorator-image-sizes" value="480x770,770x480"/>
+                            <entry key="decorator-screen-positions" value="60x60,60x60"/>
                             <entry key="resolution_width" value="1080"/>
                             <entry key="resolution_height" value="1920"/>
                             <entry key="userAgentPattern" value=".*Android.*Mobile.*"/>
