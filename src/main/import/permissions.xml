@@ -3,9 +3,9 @@
              xmlns:jcr="http://www.jcp.org/jcr/1.0"
              xmlns:j="http://www.jahia.org/jahia/1.0"
              xmlns:jnt="http://www.jahia.org/jahia/nt/1.0">
-    <editMode jcr:primaryType="jnt:permission">
+    <jContent jcr:primaryType="jnt:permission">
         <engineTabs jcr:primaryType="jnt:permission">
             <viewChannelsTab jcr:primaryType="jnt:permission"/>
         </engineTabs>
-    </editMode>
+    </jContent>
 </permissions>
