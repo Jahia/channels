@@ -4,7 +4,7 @@
 
 Channels
 ======================
-Digital Experience Manager module that detects and display different content depending on the channel.
+Jahia module that detects and display different content depending on the channel.
 
 ## Open-Source
 
