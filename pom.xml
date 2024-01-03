@@ -52,12 +52,12 @@
         <version>8.0.0.0</version>
 		<relativePath />
     </parent>
+    <groupId>org.jahia.community.modules</groupId>
     <artifactId>channels</artifactId>
     <version>8.1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>Jahia Channels</name>
-    <description>Jahia template module that detects and display different content depending on the channel.
-    </description>
+    <description>Jahia template module that detects and display different content depending on the channel.</description>
     <scm>
         <connection>scm:git:git@github.com:Jahia/channels.git</connection>
         <developerConnection>scm:git:git@github.com:Jahia/channels.git</developerConnection>
@@ -66,8 +66,6 @@
     </scm>
 
     <properties>
-        <jahia-module-type>system</jahia-module-type>
-        <jahia-module-signature>MCwCFAJCcedO1lrBrb3FR6P13n71dSMRAhROEO+IsLVkuG2HaFnKq5NyEM70MA==</jahia-module-signature>
         <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
     </properties>
 
