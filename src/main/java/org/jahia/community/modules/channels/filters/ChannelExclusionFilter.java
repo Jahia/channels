@@ -41,7 +41,7 @@
  *     If you are unsure which license is appropriate for your use,
  *     please contact the sales department at sales@jahia.com.
  */
-package org.jahia.modules.channels.filters;
+package org.jahia.community.modules.channels.filters;
 
 import org.jahia.services.channels.Channel;
 import org.jahia.services.channels.ChannelService;
