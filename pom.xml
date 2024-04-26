@@ -54,7 +54,7 @@
     </parent>
     <groupId>org.jahia.community.modules</groupId>
     <artifactId>channels</artifactId>
-    <version>8.1.0-SNAPSHOT</version>
+    <version>8.1.0</version>
     <packaging>bundle</packaging>
     <name>Jahia Channels</name>
     <description>Jahia template module that detects and display different content depending on the channel.</description>
@@ -62,7 +62,7 @@
         <connection>scm:git:git@github.com:Jahia/channels.git</connection>
         <developerConnection>scm:git:git@github.com:Jahia/channels.git</developerConnection>
         <url>https://github.com/Jahia/channels</url>
-        <tag>HEAD</tag>
+        <tag>8_1_0</tag>
     </scm>
 
     <properties>
