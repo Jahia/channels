@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The module requires Jahia 8.2.0.0 or later, and no longer uses Spring.
 - Screen sizes in the preview: 390x844 for the iPhone and 360x800 for the Android phone.
 - The preview of a device only accepts the variants that the device declares.
+- A cookie or a `channel` parameter only selects a declared channel.
 
 ### Removed
 

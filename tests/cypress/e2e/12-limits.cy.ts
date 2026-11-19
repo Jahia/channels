@@ -80,6 +80,39 @@ describe('Channels - limits', () => {
             .then(body => expectMarkers(body, {[M.always]: true, [M.onlyIphone]: false}, 'iPhone token after 1024 characters'))
     })
 
+    const withCookie = (userAgent: string, channel: string) => {
+        cy.clearCookies()
+        return cy.request({
+            url: `/sites/${site}/home.html`,
+            headers: {'User-Agent': userAgent, Cookie: `org.jahia.channels.activeChannel=${channel}`}
+        }).then(resp => resp.body as string)
+    }
+
+    it('a cookie that names a declared channel selects it, and the page is cached for each channel', () => {
+        // from an empty cache, so that the first request is the one that fills it
+        groovyJson('flushOutputCaches.groovy')
+        withCookie(UA.desktop, 'apple_iphone_ver1').then(body =>
+            expectMarkers(body, {[M.always]: true, [M.onlyIphone]: true}, 'desktop with the iPhone cookie'))
+        requestLive(site, UA.desktop).then(body =>
+            expectMarkers(body, {[M.always]: true, [M.onlyIphone]: false}, 'desktop without cookie'))
+        withCookie(UA.desktop, 'apple_iphone_ver1').then(body =>
+            expectMarkers(body, {[M.always]: true, [M.onlyIphone]: true}, 'desktop with the iPhone cookie, again'))
+    })
+
+    it('a cookie that names no declared channel is ignored: the channel still comes from the User-Agent', () => {
+        withCookie(UA.iphone, 'not_a_channel').then(body =>
+            expectMarkers(body, {[M.always]: true, [M.onlyIphone]: true}, 'iPhone with an unknown cookie'))
+        withCookie(UA.desktop, 'not_a_channel').then(body =>
+            expectMarkers(body, {[M.always]: true, [M.onlyIphone]: false}, 'desktop with an unknown cookie'))
+    })
+
+    it('a channel parameter that names no declared channel means the generic channel in preview', () => {
+        requestDefault(site, 'render', '?channel=not_a_channel&noembed=true').then(body =>
+            expectMarkers(body, {[M.always]: true, [M.onlyIphone]: false}, 'unknown channel parameter'))
+        requestDefault(site, 'render', '?channel=apple_iphone_ver1&noembed=true').then(body =>
+            expectMarkers(body, {[M.always]: true, [M.onlyIphone]: true}, 'declared channel parameter'))
+    })
+
     it('a fallBack cycle is broken: rendering and channel matching terminate, the cycle is logged', () => {
         editDeviceConfiguration('cypress-cycle-a', {
             ...TEST_MARKER,
