@@ -1,4 +1,4 @@
-import {defineConfig} from 'cypress'
+import {defineConfig} from 'cypress';
 
 export default defineConfig({
     reporter: 'cypress-multi-reporters',
@@ -15,11 +15,11 @@ export default defineConfig({
     e2e: {
         setupNodeEvents(on, config) {
             // eslint-disable-next-line @typescript-eslint/no-var-requires
-            return require('./cypress/plugins/index.js')(on, config)
+            return require('./cypress/plugins/index.js')(on, config);
         },
         excludeSpecPattern: '*.ignore.ts',
-        // overridden by JAHIA_URL (see harness.env) in cypress/plugins/index.js
+        // Overridden by JAHIA_URL (see harness.env) in cypress/plugins/index.js
         baseUrl: 'http://localhost:8090'
     },
     env: {}
-})
+});
