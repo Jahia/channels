@@ -1,45 +1,17 @@
 /*
- * ==========================================================================================
- * =                   JAHIA'S DUAL LICENSING - IMPORTANT INFORMATION                       =
- * ==========================================================================================
+ * Copyright (C) 2002-2026 Jahia Solutions Group SA. All rights reserved.
  *
- *                                 http://www.jahia.com
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     Copyright (C) 2002-2020 Jahia Solutions Group SA. All rights reserved.
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- *     THIS FILE IS AVAILABLE UNDER TWO DIFFERENT LICENSES:
- *     1/GPL OR 2/JSEL
- *
- *     1/ GPL
- *     ==================================================================================
- *
- *     IF YOU DECIDE TO CHOOSE THE GPL LICENSE, YOU MUST COMPLY WITH THE FOLLOWING TERMS:
- *
- *     This program is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     This program is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
- *
- *     2/ JSEL - Commercial and Supported Versions of the program
- *     ===================================================================================
- *
- *     IF YOU DECIDE TO CHOOSE THE JSEL LICENSE, YOU MUST COMPLY WITH THE FOLLOWING TERMS:
- *
- *     Alternatively, commercial and supported versions of the program - also known as
- *     Enterprise Distributions - must be used in accordance with the terms and conditions
- *     contained in a separate written agreement between you and Jahia Solutions Group SA.
- *
- *     If you are unsure which license is appropriate for your use,
- *     please contact the sales department at sales@jahia.com.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package org.jahia.community.modules.channels.filters;
 
@@ -49,24 +21,41 @@ import org.jahia.services.render.RenderContext;
 import org.jahia.services.render.Resource;
 import org.jahia.services.render.filter.AbstractFilter;
 import org.jahia.services.render.filter.RenderChain;
+import org.jahia.services.render.filter.RenderFilter;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
-import java.util.Objects;
 
 /**
- * This filter will exclude a module rendering from a node if it has the associated configuration.
+ * Render filter that includes or excludes a content item depending on the channel of the request.
+ * <p>
+ * It acts on the nodes that have the <code>jmix:channelSelection</code> mixin:
+ * <ul>
+ * <li><code>j:channelSelection</code> holds the identifiers of the selected channels;</li>
+ * <li><code>j:channelIncludeOrExclude</code> tells whether the content is excluded for these channels
+ * (<code>exclude</code>, the default) or only shown for them (<code>include</code>).</li>
+ * </ul>
+ * A channel matches a selected channel when it is that channel or falls back to it, see
+ * {@link ChannelService#matchChannel(String, Channel)}.
+ * <p>
+ * The filter is registered as an OSGi service, which is how Jahia discovers render filters.
  */
+@Component(service = RenderFilter.class)
 public class ChannelExclusionFilter extends AbstractFilter {
 
     protected static Logger logger = org.slf4j.LoggerFactory.getLogger(ChannelExclusionFilter.class);
 
-    private ChannelService channelService;
-
-    public void setChannelService(ChannelService channelService) {
-        this.channelService = channelService;
+    @Activate
+    public void activate() {
+        // above 16, so that the filter runs behind the HTML cache: its result is cached, and a channel resolved from
+        // the User-Agent header is part of the cache key
+        setPriority(16.9f);
+        setDescription("Exclude a module from render if it is excluded for the channel");
+        setApplyOnConfigurations("module,wrappedcontent");
     }
 
     @Override
@@ -82,6 +71,15 @@ public class ChannelExclusionFilter extends AbstractFilter {
         return null;
     }
 
+    /**
+     * Returns what replaces a content item that is not rendered for the current channel.
+     * <p>
+     * Outside of the edit mode, or when a channel other than <code>generic</code> is previewed, the content is
+     * removed. In the edit mode with the <code>generic</code> channel, the content stays, wrapped by the
+     * <code>unselectedChannel</code> view, so that it can still be edited.
+     *
+     * @return an empty string to render nothing, or <code>null</code> to go on with the rendering
+     */
     public String getExcludedResult(Resource resource, RenderContext context) {
         if (!context.isEditMode() || (context.getChannel() != null && !context.getChannel().getIdentifier().equals("generic"))) {
             return "";
@@ -92,13 +90,18 @@ public class ChannelExclusionFilter extends AbstractFilter {
         return null;
     }
 
+    /**
+     * Applies the selection of the node to the current channel: in <code>exclude</code> mode the content is not
+     * rendered when the channel matches one of the selected channels, in <code>include</code> mode it is not
+     * rendered when the channel matches none of them.
+     */
     private String filterChannel(Resource resource, RenderContext renderContext) throws RepositoryException {
         boolean isExcluding = isExcluding(resource);
         Value[] channelExclusionValues = getChannelExclusionValues(resource);
         Channel currentChannel = renderContext.getChannel();
         for (Value channelExclusionValue : channelExclusionValues) {
             String exclusionValueString = channelExclusionValue.getString();
-            if (exclusionValueString != null && channelService.matchChannel(exclusionValueString, currentChannel)) {
+            if (exclusionValueString != null && ChannelService.getInstance().matchChannel(exclusionValueString, currentChannel)) {
                 return isExcluding ? getExcludedResult(resource, renderContext) : null;
             }
         }
