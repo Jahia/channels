@@ -1,0 +1,287 @@
+[
+  {
+    "name": "viewport_0320",
+    "displayName": "Mobile 320 (WCAG)",
+    "userAgent": false,
+    "overlayScrollbars": true,
+    "variants": [
+      {
+        "name": "portrait",
+        "width": 320,
+        "height": 568,
+        "frameWidth": 348,
+        "frameHeight": 648,
+        "screenX": 14,
+        "screenY": 40
+      },
+      {
+        "name": "landscape",
+        "width": 568,
+        "height": 320,
+        "frameWidth": 648,
+        "frameHeight": 348,
+        "screenX": 40,
+        "screenY": 14
+      }
+    ]
+  },
+  {
+    "name": "viewport_0360",
+    "displayName": "Mobile 360",
+    "userAgent": false,
+    "overlayScrollbars": true,
+    "variants": [
+      {
+        "name": "portrait",
+        "width": 360,
+        "height": 800,
+        "frameWidth": 388,
+        "frameHeight": 880,
+        "screenX": 14,
+        "screenY": 40
+      },
+      {
+        "name": "landscape",
+        "width": 800,
+        "height": 360,
+        "frameWidth": 880,
+        "frameHeight": 388,
+        "screenX": 40,
+        "screenY": 14
+      }
+    ]
+  },
+  {
+    "name": "viewport_0414",
+    "displayName": "Mobile 414",
+    "userAgent": false,
+    "overlayScrollbars": true,
+    "variants": [
+      {
+        "name": "portrait",
+        "width": 414,
+        "height": 896,
+        "frameWidth": 442,
+        "frameHeight": 976,
+        "screenX": 14,
+        "screenY": 40
+      },
+      {
+        "name": "landscape",
+        "width": 896,
+        "height": 414,
+        "frameWidth": 976,
+        "frameHeight": 442,
+        "screenX": 40,
+        "screenY": 14
+      }
+    ]
+  },
+  {
+    "name": "viewport_0768",
+    "displayName": "Tablet 768",
+    "userAgent": false,
+    "overlayScrollbars": true,
+    "variants": [
+      {
+        "name": "portrait",
+        "width": 768,
+        "height": 1024,
+        "frameWidth": 820,
+        "frameHeight": 1084,
+        "screenX": 26,
+        "screenY": 30
+      },
+      {
+        "name": "landscape",
+        "width": 1024,
+        "height": 768,
+        "frameWidth": 1084,
+        "frameHeight": 820,
+        "screenX": 30,
+        "screenY": 26
+      }
+    ]
+  },
+  {
+    "name": "viewport_1024",
+    "displayName": "Tablet 1024",
+    "userAgent": false,
+    "overlayScrollbars": true,
+    "variants": [
+      {
+        "name": "landscape",
+        "width": 1024,
+        "height": 768,
+        "frameWidth": 1084,
+        "frameHeight": 820,
+        "screenX": 30,
+        "screenY": 26
+      },
+      {
+        "name": "portrait",
+        "width": 768,
+        "height": 1024,
+        "frameWidth": 820,
+        "frameHeight": 1084,
+        "screenX": 26,
+        "screenY": 30
+      }
+    ]
+  },
+  {
+    "name": "viewport_1280",
+    "displayName": "Laptop 1280",
+    "userAgent": false,
+    "overlayScrollbars": false,
+    "variants": [
+      {
+        "name": "landscape",
+        "width": 1280,
+        "height": 720,
+        "frameWidth": 1468,
+        "frameHeight": 778,
+        "screenX": 94,
+        "screenY": 24
+      }
+    ]
+  },
+  {
+    "name": "viewport_1536",
+    "displayName": "Desktop 1536",
+    "userAgent": false,
+    "overlayScrollbars": false,
+    "variants": [
+      {
+        "name": "landscape",
+        "width": 1536,
+        "height": 864,
+        "frameWidth": 1564,
+        "frameHeight": 986,
+        "screenX": 14,
+        "screenY": 14
+      }
+    ]
+  },
+  {
+    "name": "viewport_1920",
+    "displayName": "Desktop 1920",
+    "userAgent": false,
+    "overlayScrollbars": false,
+    "variants": [
+      {
+        "name": "landscape",
+        "width": 1920,
+        "height": 1080,
+        "frameWidth": 1948,
+        "frameHeight": 1202,
+        "screenX": 14,
+        "screenY": 14
+      }
+    ]
+  },
+  {
+    "name": "apple_iphone_ver1",
+    "displayName": "Phone: iPhone",
+    "userAgent": true,
+    "overlayScrollbars": true,
+    "variants": [
+      {
+        "name": "portrait",
+        "width": 390,
+        "height": 844,
+        "frameWidth": 418,
+        "frameHeight": 924,
+        "screenX": 14,
+        "screenY": 40
+      },
+      {
+        "name": "landscape",
+        "width": 844,
+        "height": 390,
+        "frameWidth": 924,
+        "frameHeight": 418,
+        "screenX": 40,
+        "screenY": 14
+      }
+    ]
+  },
+  {
+    "name": "generic_android",
+    "displayName": "Phone: Android",
+    "userAgent": true,
+    "overlayScrollbars": true,
+    "variants": [
+      {
+        "name": "portrait",
+        "width": 360,
+        "height": 800,
+        "frameWidth": 388,
+        "frameHeight": 880,
+        "screenX": 14,
+        "screenY": 40
+      },
+      {
+        "name": "landscape",
+        "width": 800,
+        "height": 360,
+        "frameWidth": 880,
+        "frameHeight": 388,
+        "screenX": 40,
+        "screenY": 14
+      }
+    ]
+  },
+  {
+    "name": "apple_ipad_ver1",
+    "displayName": "Tablet: iPad",
+    "userAgent": true,
+    "overlayScrollbars": true,
+    "variants": [
+      {
+        "name": "portrait",
+        "width": 768,
+        "height": 1024,
+        "frameWidth": 820,
+        "frameHeight": 1084,
+        "screenX": 26,
+        "screenY": 30
+      },
+      {
+        "name": "landscape",
+        "width": 1024,
+        "height": 768,
+        "frameWidth": 1084,
+        "frameHeight": 820,
+        "screenX": 30,
+        "screenY": 26
+      }
+    ]
+  },
+  {
+    "name": "android_tablet",
+    "displayName": "Tablet: Android",
+    "userAgent": true,
+    "overlayScrollbars": true,
+    "variants": [
+      {
+        "name": "portrait",
+        "width": 768,
+        "height": 1024,
+        "frameWidth": 820,
+        "frameHeight": 1084,
+        "screenX": 26,
+        "screenY": 30
+      },
+      {
+        "name": "landscape",
+        "width": 1024,
+        "height": 768,
+        "frameWidth": 1084,
+        "frameHeight": 820,
+        "screenX": 30,
+        "screenY": 26
+      }
+    ]
+  }
+]

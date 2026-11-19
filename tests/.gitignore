@@ -1,0 +1,10 @@
+# local overrides (may hold a license): never commit
+.env
+.env.*
+!.env.example
+license*.xml
+# dependencies and run outputs
+node_modules/
+artifacts/
+run-artifacts/
+results/

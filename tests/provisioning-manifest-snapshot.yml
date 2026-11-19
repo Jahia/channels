@@ -1,0 +1,5 @@
+# Template set used by the test site. Its page template has a single area, "pagecontent" (area as sub-node).
+# The module under test is installed afterwards from ./artifacts (see env.provision.sh).
+- installBundle: 'empty-templates-1.0.0.jar'
+  autoStart: true
+  uninstallPreviousVersion: true

@@ -1,0 +1,16 @@
+{
+  "include": [
+    "node_modules/cypress",
+    "cypress/*/*.ts"
+  ],
+  "compilerOptions": {
+    "types": ["cypress", "@jahia/cypress", "cypress-wait-until"],
+    "target": "es2019",
+    "lib": ["es2021", "dom"],
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  }
+}
